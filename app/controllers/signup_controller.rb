@@ -10,8 +10,8 @@ class SignupController < ApplicationController
       # passes an access token token via cookies and renders CSRF:
       tokens = session.login
       response.set_cookie(JWTSessions.access_cookie,
-                          value: tokens[:access]
-                          httponly: true
+                          value: tokens[:access],
+                          httponly: true,
                           secure: Rails.env.production?)
 
       render json: { csrf: tokens[:csrf] }
