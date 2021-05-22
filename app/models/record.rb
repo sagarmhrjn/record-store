@@ -1,5 +1,5 @@
 class Record < ApplicationRecord
-  belongs_to :users
+  belongs_to :user
 
   validates :title, :year, presence: true
 end
